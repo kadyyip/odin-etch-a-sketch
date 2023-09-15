@@ -7,8 +7,6 @@ function createGrid(numSquaresPerSide) {
     for (let i = 0; i < totalSquares; i++) {
         const square = document.createElement("div");
         square.classList.add("square");
-        console.log(`background-color: blue; width: ${squareLength}px; 
-        height: ${squareLength}px; border: black solid ${borderPx}px;`)
         square.style.cssText = `width: ${squareLength}px; 
             height: ${squareLength}px; border: #a6a6a6 solid ${borderPx}px;`;
         square.addEventListener("mouseover", fillSquare); 
@@ -16,8 +14,30 @@ function createGrid(numSquaresPerSide) {
     }
 }
 
-function fillSquare(e) {
-    e.target.classList.add("fill");
+function fillSquare(event) {
+    event.target.classList.add("fill");
 }
 
-createGrid(16);
+function removeGrid() {
+    const grid = document.querySelector(".grid");
+    grid.replaceChildren();
+}
+
+function updateGridSize(event) {
+    let numSquaresPerSide = event.target.value
+    gridSize.textContent = `Grid Size: ${numSquaresPerSide} x ${numSquaresPerSide}`;
+}
+
+function updateGrid(event) {
+    let numSquaresPerSide = event.target.value;
+    removeGrid();
+    createGrid(numSquaresPerSide);
+}
+
+const slider = document.querySelector(".slider");
+const gridSize = document.querySelector(".grid-size");
+gridSize.textContent = `Grid Size: ${slider.value} x ${slider.value}`;
+slider.addEventListener("change", updateGrid);
+slider.addEventListener("input", updateGridSize);
+
+createGrid(slider.value);
