@@ -8,11 +8,28 @@
 
     <body>
         <h1>Etch-a-Sketch</h1>
-        <div class="slider-container">
-            <div class="grid-size"></div>
-            <input type="range" min="2" max="100" value="16" class="slider">
+        <div class="container">
+
+            <div class="option-menu">
+                <div class="color">
+                    <button type="button" id="pick" class="active">
+                        Pick your own: <input type="color" id="color-picker" value="#000000">
+                    </button>
+                    <button type="button" id="random">Random</button>
+                    <button type="button" id="rainbow">Pastel Rainbow</button>
+                    <button type="button" id="eraser">Eraser</button>
+                    <button type="button" id="clear">Clear</button>
+
+                </div>
+
+                <div class="slider-container">
+                    <div class="grid-size"></div>
+                    <input type="range" min="2" max="100" value="16" class="slider">
+                </div>
+            </div>
+
+            <div class="grid"></div>
         </div>
-        <div class="grid"></div>
         <script src="script.js"></script>
     </body>
 </html>

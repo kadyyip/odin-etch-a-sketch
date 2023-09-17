@@ -9,6 +9,13 @@ body {
     align-items: center;
 }
 
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
 .grid {
     width: 500px;
     height: 500px;
@@ -16,17 +23,13 @@ body {
     flex-wrap: wrap;
 }
 
-.fill {
-    background-color: black;
-}
-
 .slider-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 200px; 
-    margin-bottom: 20px;
+    width: 150px; 
+    margin: 20px 0px;
     gap: 10px;
 }
   
@@ -56,4 +59,42 @@ body {
     height: 20px; 
     background: #000000; 
     cursor: pointer; /* Cursor on hover */
+}
+
+button {
+    width: 150px;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 25px;
+}
+
+.active {
+    background-color: #cfcfcf;
+}
+
+.color {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#color-picker {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100px;
+    height: 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#color-picker::-webkit-color-swatch {
+    border: none;
+}
+
+#color-picker::-moz-color-swatch {
+    border: none;
 }
